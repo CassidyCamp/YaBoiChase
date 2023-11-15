@@ -42,7 +42,7 @@
 
     <div class="hero_bg_box">
       <div class="bg_img_box">
-        <img id="" src="https://media.discordapp.net/attachments/1152267510910038077/1172747471454208050/image0.jpg?ex=65617131&is=654efc31&hm=efe38d9a80be4cad1c0d33e325de210d59c4f98dd1e7962fa332400158be79f3&=&width=1497&height=893" alt="">
+        <div id="photo"></div>
       </div>
     </div>
 
@@ -78,7 +78,10 @@
                 <a class="nav-link" href="bs.pdf">Bell Schedules</a>
               </li>
               <li class="nav-item">
-                <input type="text" id="imageUrlInput" placeholder="Enter BG Image URL">
+                <form>
+                  <input type="text" id="input">
+                  <button type="button" id="submit">Submit</button>
+                </form>
               </li>
             </ul>
           </div>
@@ -143,17 +146,10 @@
   </section>
   <!-- footer section -->
   <script>
-    // Function to update image source based on user input
-    function updateImage() {
-        // Get the input value
-        var imageUrl = document.getElementById("imageUrlInput").value;
-
-        // Update the image source
-        document.getElementById("dynamicImage").src = imageUrl;
-    }
-
-    // Attach the function to the input's 'keyup' event
-    document.getElementById("imageUrlInput").addEventListener("keyup", updateImage);
+$('#submit').click(function(){
+  var photo = $('#input').val();
+  $('#photo').append('<img src=' + photo + '>')
+});
   </script>
   <!-- jQery -->
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
